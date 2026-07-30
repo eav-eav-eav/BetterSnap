@@ -1,7 +1,6 @@
 ﻿using System;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
-using RebindDevTools;
 using UnityEngine;
 using Watcher;
 
@@ -45,7 +44,7 @@ internal static class RoomCameraHooks
             var isSBCameraScrollDisabled = ModManager.GetModById("SBCameraScroll")?.enabled != true;
             var teleportSlugcatKey = ModManager.GetModById("rebinddevtools")?.enabled != true
                 ? KeyCode.V
-                : ModOptions.teleportSlugcat.Value;
+                : RebindDevToolsAccessor.GetTeleportSlugcatKey();
             var shouldStayWithinScreen = creature is Player &&
                    camera.game.devToolsActive &&
                    isSBCameraScrollDisabled &&
