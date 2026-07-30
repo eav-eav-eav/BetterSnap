@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <RootNamespace>BetterSnap</RootNamespace>
+    <AssemblyName>BetterSnap</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFolder>$(OUTPUT_DIR)\bettersnap\newest\plugins</TargetFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(REFERENCES_DIR)\PUBLIC-Assembly-CSharp.dll</HintPath>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>$(REFERENCES_DIR)\BepInEx.dll</HintPath>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="HOOKS-Assembly-CSharp">
+      <HintPath>$(REFERENCES_DIR)\HOOKS-Assembly-CSharp.dll</HintPath>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>$(REFERENCES_DIR)\MonoMod.RuntimeDetour.dll</HintPath>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>$(REFERENCES_DIR)\MonoMod.Utils.dll</HintPath>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>$(REFERENCES_DIR)\Mono.Cecil.dll</HintPath>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(REFERENCES_DIR)\UnityEngine.dll</HintPath>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>$(REFERENCES_DIR)\Unity.Mathematics.dll</HintPath>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>$(REFERENCES_DIR)\UnityEngine.AssetBundleModule.dll</HintPath>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(REFERENCES_DIR)\UnityEngine.CoreModule.dll</HintPath>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(REFERENCES_DIR)\UnityEngine.InputLegacyModule.dll</HintPath>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="RebindDevTools">
+      <HintPath>$(REFERENCES_DIR)\BetterSnap\RebindDevTools.dll</HintPath>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <Target Name="Copy" AfterTargets="PostBuildEvent">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(TargetFolder)" SkipUnchangedFiles="true" />
+  </Target>
+</Project>
